@@ -92,4 +92,19 @@ Para un repositorio, crea donde esta la carpeta central
 Lo inicias con 
 ```
 $ git init
+$ git status
+$ git rm 
+$ git rm --cached
+```
+status nos dice el estado del trabajo en el momento
+rm remueve el archivo del git
+rm cached es memoria ram, no esta en la base de datos y sus cambios
+
+git commit -m "Este es el primer commit de este archivo"
+
+Pero debes decir quien eres, si no le dices por defecto te trae las variables de entorno
+
+```
+- accedes a un comando
+-- vas a usar una palabra
 ```
