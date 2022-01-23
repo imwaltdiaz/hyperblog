@@ -108,3 +108,5 @@ Pero debes decir quien eres, si no le dices por defecto te trae las variables de
 - accedes a un comando
 -- vas a usar una palabra
 ```
+
+git add . añades todo
