@@ -148,3 +148,6 @@ $ git show
 
 Muestra la historia de cambios
 diff muestra la diferencia entre la version anterior y la nueva
+
+Vamos a añadir un tercer estado
+

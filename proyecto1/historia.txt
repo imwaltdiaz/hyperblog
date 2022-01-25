@@ -1,3 +1,5 @@
 Esta es nuestra historia con Git!
 
-En camara parece una, pero es puro filtro
+Se ve fuerte y lo es
+
+Pero también es increíble
