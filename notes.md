@@ -86,6 +86,7 @@ con history te sale toda la historia de comandos, si quieres repetir un comando 
 rm es remove
 
 ## Crea un repositorio git y haz tu primer commit
+https://platzi.com/clases/1557-git-github/19936-crea-un-repositorio-de-git-y-haz-tu-primer-commit/
 
 Para un repositorio, crea donde esta la carpeta central
 
@@ -110,3 +111,40 @@ Pero debes decir quien eres, si no le dices por defecto te trae las variables de
 ```
 
 git add . añades todo
+
+git log
+Nos muestra la historia del archivo
+El numero largisimo es el nombre de ese commit
+
+
+## ¿Qué es un Branch (rama) y cómo funciona un Merge en Git?
+
+![alt text](https://static.platzi.com/media/public/uploads/branches_f9d7e237-6a15-4143-a4e9-cc5af06be833.PNG)
+
+Cada commit es una nueva versión, esto en **master**
+
+Experimentos nace de v3 y se crean nuevas cosas
+
+Si se encuentra un bug, se podría crear una rama llamada Bugfiting o **Hotfix** haciendo pruebas en la rama actual y luegoson probados con la rama actual o **merge**, es decir, unes los cambios de una rama con otra
+
+Acabados los experimentos, le pides que se fusione con la rama final, es decir que hagan merge
+
+La rama de experimentos lo suelen llamar también **development**
+
+A veces hay conflictos, donde se rompen archivos 
+
+### Gitflow:
+
+GitFlow es una una guía que nos da cierto estándares para manejar la ramificación de nuestros proyectos, es decir, que ramas debemos tener, cuándo y de dónde debemos crear nuevas ramas, cómo debemos nombrar dichas ramas y muchos otros conceptos que nos ayudaran a manejar mucho mejor nuestro repositorio; siendo esto muy importante cuando trabajamos en conjunto con varios desarrolladores.
+
+Links:
+https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
+https://danielkummer.github.io/git-flow-cheatsheet/
+
+## Analizar cambios en los archivos de tu proyecto con Git
+
+$ git show
+
+Muestra la historia de cambios
+diff muestra la diferencia entre la version anterior y la nueva
