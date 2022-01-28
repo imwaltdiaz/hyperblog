@@ -231,3 +231,13 @@ Con git log, veremos que todo lo que hemos hecho se ha borrado
 
 Con git diff, lo verde y + verás los  cambios que has hecho pero no añades y el resto anda en la memoria ram
 
+git log --stat
+Verás los cambios especificos que se hicieorn a partir del commit
+
+git checkout v1
+Puedes ver la version que quieras y vas a regresar a esa estado, no va a cambiar nada
+
+Si haces un commit vas a borrar todo lo que tenias antes
+
+si haces git checkout master vuelves a la ultima version con el ultimo commit
+
