@@ -3,3 +3,8 @@ Esta es nuestra historia con Git!
 Se ve fuerte y lo es
 
 Pero también es increíble
+
+Bang Bang!
+
+Sobrevivió
+
