@@ -151,3 +151,83 @@ diff muestra la diferencia entre la version anterior y la nueva
 
 Vamos a añadir un tercer estado
 
+El git commit te va a sacar un editor de codigo en la linea de comandos usando VIM,, en WSL es "nano"
+
+Nada de los hashtags va a ir en el Git
+
+$ git diff v1 v2
+Priomero va la version original y luego la mas nueva
+
+### Resumen de comandos:
+```
+$ git init //inicializar el repositorio
+$ git add nombre_de_archivo.extencion //Agregar el archivo al repositorio
+$ git commit -m “Mensaje”// Agregamos los cambios para el repositorio
+$ git add .// Agregar los cambios de la carpeta en la que nos encontramos agregar todo
+$ git status // visualizar cambios
+$ git log nombre_de_archivos.extencion //historico de cambios con detalles
+$ git push //envia a otro repositorio remoto lo que estamos haciendo
+$ git pull //traer repositorio remoto
+$ ls //listado de carpetas en donde me encuentro es decir dir en windows
+$ pwd //ubicacion actual
+$ mkdir //make directori nueva carpeta
+$ touch archivo.extencion//crear archivo vacio
+$ cat archivo.extencion//muestra el contenido del archivo
+$ history //historial de comandos utilizados durante esa sesion
+$ rm archivo.extencion //eliminacion de archivo
+$ comando --help //ayuda sobre el comando
+$ checkout //traer cambios realizado
+$ git rm --cached archivo.extencion//se usa para devolver el archivo que se tiene en ram cuando escribimos git add lo devuleve a estado natural mientra esta en staging
+$ git config --list //muestra la lista de configuracion de git
+$ git config --list --show-origin//rutas de acceso a la configuración de git
+$ git log archivo.extencion //muestra la historia del archivo
+```
+
+## ¿Qué es el staging y los repositorios? Ciclo básico de trabajo en Git
+
+![alt text](https://static.platzi.com/media/public/uploads/capture1_44e940e0-77b2-4f04-b76d-d7637b4ca7a7.PNG)
+
+
+Un directorio y carpeta es lo mismo, cuando accedes por consola e iniicas un git init
+
+Se crea un área de memoria ram llamada staging, es donde irás añadiendo los cambios y se cre el rapositorio, encontrado en la carpeta .git, donde están los cambios
+
+Una vez hagas esos cambios, los agregas al stagin area usando el comando git add
+
+Al usar el add, el archivo vive en staging pero espera que sea enviado al repositorio
+
+Al usar commit, el archivo ahora se va a lrepositorio, cuyo nombre es master. Entonces aquí tendremos todos los cambios que hagamos.
+
+Estados de larchivo:
+
+En un inicio está en untracked, o sin rastrear. 
+
+Una vez haces el git add, entra al estado tracked y hace parte de staging y chequea los cambios
+
+Una vez le das add, sabe que hay cambios y se van a stagging
+
+Si hay cambios y no le das a git add no está en staging
+
+En el repositorio se le añade los indicadores del commit, y todos pueden ver los cambios que se hicieron
+
+Puede haber un cambio en el repositorio pero no en tu carpeta
+
+Entonces irás a esa rama, y harás el comando checkout, que trae los últimos cambios hacia tu carpeta
+
+![alt text](https://static.platzi.com/media/user_upload/estados-git-0acb84f7-5080-4098-99d9-59012a3b8e86.jpg)
+
+
+## Volver en el tiempo en nuestro repositorio utilizando reset y checkout
+
+git reset te permite llegar a una versión anterior
+
+git reset version --hard
+Todo vuelve al estado anterior
+
+git reset version --soft
+volvemos a la versión pero lo que esté en stagging, sigue en stagging
+
+Con git log, veremos que todo lo que hemos hecho se ha borrado
+
+Con git diff, lo verde y + verás los  cambios que has hecho pero no añades y el resto anda en la memoria ram
+
