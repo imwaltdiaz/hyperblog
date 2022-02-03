@@ -331,3 +331,12 @@ Master es nuestra rama principal, contamos con una historia de commits, el mas r
 
 Creamos una rama llamada cabecera, esto creara una copia del último cmmit en otro lado, y todos los cambios en la rama no se verán en master hasta que se fucionen con merge
 
+git commit -am hace git add, solo funciona con archivos que ya hicimos git add
+
+La rama se va a crear desde el lugar donde estas
+
+git show muestra los cambios, veo el head en el master
+
+git branch cabecera 
+
+Ahora con git show vemos que tenemos un head que le apunta al master y también a la cabecera pero seguimos em master
