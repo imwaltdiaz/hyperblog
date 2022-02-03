@@ -198,7 +198,7 @@ Al usar el add, el archivo vive en staging pero espera que sea enviado al reposi
 
 Al usar commit, el archivo ahora se va a lrepositorio, cuyo nombre es master. Entonces aquí tendremos todos los cambios que hagamos.
 
-Estados de larchivo:
+Estados del archivo:
 
 En un inicio está en untracked, o sin rastrear. 
 
@@ -240,4 +240,94 @@ Puedes ver la version que quieras y vas a regresar a esa estado, no va a cambiar
 Si haces un commit vas a borrar todo lo que tenias antes
 
 si haces git checkout master vuelves a la ultima version con el ultimo commit
+
+## Git reset vs Git rm
+
+**git rm** eliminará archivos de git sin eliminar su historial de versiones
+
+Así que para recuperr esos archivos, debes viajar en el tiempo al último commit antes de eliminarlos 
+
+Para usarlo tienes:
+
+git rm --cached
+Elimina los archivos del repositorio local y de staging, pero los mantiene en el disco duro.
+Básicamente deja de trackear el historial de esos archivos, por lo que pasarán a un estado de untracked
+
+git rm --force
+Elimina los archivos de Git y del disco duro. Git guarda los archivos y su existencia, pero es dificil acceder a ellos.
+
+
+git reset ayuda a volver en el tiempo pero sin posibilidad de volver al futuro. Borramos la historia y la debemos sobreescribir.
+
+Solo usalo en casos de emergencia
+Para usargit reset puedes usar:
+
+git reset --hard
+Borra toda la información en staging (se va para siempre). Borra todo. Se borra la informacion de los commits y del staging.
+
+git reset --soft
+Mantiene los archivos en staging para que apliques unos ultimos cambios desde un commit anterior. Borra el historial y registros pero guarda los cambios en staging.
+
+git reset HEAD
+Saca los archivos del area de staging. Solo para que los últimos cambios de los archivos no se envíen al último commit. Lo solucionas volviendolos a añadir con git add
+
+### Caso:
+Imagina el siguiente caso:
+
+Hacemos cambios en los archivos de un proyecto para una nueva actualización. Todos los archivos con cambios se mueven al área de staging con el comando git add. Pero te das cuenta de que uno de esos archivos no está listo todavía. Actualizaste el archivo, pero ese cambio no debe ir en el próximo commit por ahora.
+
+¿Qué podemos hacer?
+
+Bueno, todos los cambios están en el área de Staging, incluido el archivo con los cambios que no están listos. Esto significa que debemos sacar ese archivo de Staging para poder hacer commit de todos los demás.
+
+¡Al usar git rm lo que haremos será eliminar este archivo completamente de git! Todavía tendremos el historial de cambios de este archivo, con la eliminación del archivo como su última actualización. Recuerda que en este caso no buscábamos eliminar un archivo, solo dejarlo como estaba y actualizarlo después, no en este commit.
+
+En cambio, si usamos git reset HEAD, lo único que haremos será mover estos cambios de Staging a Unstaged. Seguiremos teniendo los últimos cambios del archivo, el repositorio mantendrá el archivo (no con sus últimos cambios pero sí con los últimos en los que hicimos commit) y no habremos perdido nada.
+
+Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un incendio en tu trabajo es conocer muy bien la diferencia y los riesgos de todos los comandos de Git.
+
+
+# Flujo de trabajo básico en Git
+
+Tienes un directorio de trabajo, donde están los archivos, ahi le das git init en la consola
+
+Aparece un área de preparación o staging, lugar donde vas a enviar los archivos antes de enviar a la base de datos o repositorio local
+
+Cuando quieres agregar una carpeta de tu archivo al repositorio, lo pones en la area de preparacion o staging con git add, le permite a git esto a darle un seguimiento 
+ 
+Si haces cambios, git no los va a guardar, quedan en tu directorio de trabajo
+
+Lo que queda en staging se puede perder si no me mandan al repositorio local, si no haces nada con ellos se van para proteger a de la memoria ram
+
+Para prevenir debes enviarlos como la version final, lo haces con git commit
+
+Envias todo lo que esta en staging al repositorio local
+
+¿Que pasa en un equipo de trabajo?
+
+Necesitas un servidor o repositorio remoto, donde todo el mundo le manda datos trabajados en local, suele ser github, gitlab o gitlocker.
+
+en vez de dar git init, le damos git clone url, se trae una copia del master al directorio y crea la base de datos de todos los cambios en el repositorio local
+
+sigues haciendos commits normal al repositorio local, pero cuando este listo para enviar al server de todos, usas git push
+
+que pasa si quiero traer una actu de alguien pero ya lo clone, uso git fetch, me lo trae del repositorio pero no lo copia en los archivos, para que lo copie debo fusionarlos con la ultima version en repo local y el de mi directorio, eso lo hago con git merge
+
+git pull, copia el repo local, la base local y el directorio
+
+![alt text](https://static.platzi.com/media/user_upload/Flujo%20Git%20%281%29-4de33c4b-227a-4ca4-83c4-dc11843518e6.jpg)
+
+## Introducción a las ramas o branches de Git
+
+La rama inicial es master
+
+En las ramas puedes hacer cambios sin afectar la principal rama
+
+La rama maestra cambiara el blogpost pero otra rama trabajara el header
+
+Luego las fusionaremos
+
+Master es nuestra rama principal, contamos con una historia de commits, el mas reciente es la cabecera o HEAD, detatch head es una version anterior, vuelvec con un checkout del head del master
+
+Creamos una rama llamada cabecera, esto creara una copia del último cmmit en otro lado, y todos los cambios en la rama no se verán en master hasta que se fucionen con merge
 
