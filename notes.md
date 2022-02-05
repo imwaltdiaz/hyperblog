@@ -362,7 +362,7 @@ Pero al mismo tiempo a master le crearemos contenido para luego hacer un merge f
 
 con merge nos traemos la rama alterna hata master, si lo hicieorn al reves, larama principal sería cabecera, no ceremos eso
 
-Así que debemos cambiar el HEAD a master y hacer elm erge desde ahi
+Así que debemos cambiar el HEAD a master y hacer el merge desde ahi
 
 Lo hacemos con git merge cabecera
 
