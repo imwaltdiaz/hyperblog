@@ -364,6 +364,10 @@ con merge nos traemos la rama alterna hata master, si lo hicieorn al reves, lara
 
 Así que debemos cambiar el HEAD a master y hacer el merge desde ahi
 
-Lo hacemos con git merge cabecera
+Lo hacemos con git merge nombre-de-la-rama
 
 Recuerda que cabecera es un commit, asi que luego te pedira un mensaje
+
+![alt text](https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202020-02-18%20a%20la%28s%29%2017.01.44-c4873db5-4330-4c63-8a79-d454a86123ff.jpg)
+
+## Resolución de conflictos al hacer un merge
