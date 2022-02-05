@@ -340,3 +340,19 @@ git show muestra los cambios, veo el head en el master
 git branch cabecera 
 
 Ahora con git show vemos que tenemos un head que le apunta al master y también a la cabecera pero seguimos em master
+
+En c2 teniamos los cambios del blospost
+
+Creamos una brach en cabecera con una copia exacta de c2
+
+Empezamos a hacer cambios en la rama cabecera, y ya no se ve en la rama master, y el Head viene a estar allá en lugar del blogpost
+
+git checkout rama 
+cambian al ultimo comit de cada version
+
+Head es un indicador de cual versión de commit estas viendo de los ultima version
+
+![alt text](https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202020-02-18%20a%20la%28s%29%2017.01.44-c4873db5-4330-4c63-8a79-d454a86123ff.jpg)
+
+## Fusión de ramas con Git merge
+
