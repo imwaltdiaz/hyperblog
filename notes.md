@@ -360,3 +360,10 @@ Tenemos las ramas master y cabecera, haremos modificaciones en la cabeera en el 
 
 Pero al mismo tiempo a master le crearemos contenido para luego hacer un merge fisonandolos
 
+con merge nos traemos la rama alterna hata master, si lo hicieorn al reves, larama principal sería cabecera, no ceremos eso
+
+Así que debemos cambiar el HEAD a master y hacer elm erge desde ahi
+
+Lo hacemos con git merge cabecera
+
+Recuerda que cabecera es un commit, asi que luego te pedira un mensaje
