@@ -356,3 +356,7 @@ Head es un indicador de cual versión de commit estas viendo de los ultima versi
 
 ## Fusión de ramas con Git merge
 
+Tenemos las ramas master y cabecera, haremos modificaciones en la cabeera en el css y en el html
+
+Pero al mismo tiempo a master le crearemos contenido para luego hacer un merge fisonandolos
+
