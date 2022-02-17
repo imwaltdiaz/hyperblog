@@ -498,3 +498,12 @@ El repositorio que usamos es origin, cambiemos la url de origin
 Siempre antes de hacer un commit traete la ultima version del servidor
 
 con git pull origin (traemos del origen) main (fusionaremos con main)
+
+Hacemos git commit -am
+
+Luego git pull origin main para chequear que no hayan cambiado algo antes del commmit
+
+Y por último git push origin main
+
+Tip añadir llave: ssh-add ~/.ssh/id_rsa
+
