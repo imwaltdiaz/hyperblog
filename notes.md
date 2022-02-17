@@ -384,3 +384,117 @@ La solucion de conflictos, haces merge y se combinan codigo, VSCODE te avisa que
 Crearemos un repositorio en github, le daremos clone con https
 
 copiaremos la url y le diremos a git que vamosa  agregar un origen remoto de nuestros archivos
+
+Para clonar un repositorio desde GitHub (o cualquier otro servidor remoto) debemos copiar la URL (por ahora, usando HTTPS) y ejecutar el comando git clone + la URL que acabamos de copiar. Esto descargara la versión de nuestro proyecto que se encuentra en GitHub.
+
+Sin embargo, esto solo funciona para las personas que quieren empezar a contribuir en el proyecto. Si queremos conectar el repositorio de GitHub con nuestro repositorio local, el que creamos con git init, debemos ejecutar las siguientes instrucciones:
+```
+// Primero: Guardar la URL del repositorio de GitHub
+// con el nombre de origin
+git remote add origin URL
+
+// Segundo: Verificar que la URL se haya guardado
+// correctamente:
+git remote
+git remote -v
+
+// Tercero: Traer la versión del repositorio remoto y
+// hacer merge para crear un commit con los archivos
+// de ambas partes. Podemos usar git fetch y git merge
+// o solo el git pull con el flag --allow-unrelated-histories:
+git pull origin master --allow-unrelated-histories
+
+// Por último, ahora sí podemos hacer git push para guardar
+// los cambios de nuestro repositorio local en GitHub:
+git push origin master
+```
+
+Raw es el codigo en bruto
+
+Blame es quien tiene la culpa de lo que se hizo
+
+History es la historial del archivo
+
+git remote add origin direccion(el https)
+git remote veremos que hay un origin
+git remote -v veremos que hay un origin para hacer fetch y uno para hacer pull
+
+git push origin main, le decimos que envie al origne la rama main
+
+Te dirá que el remoto contine trabajo que no tienes localmente, debes primero integrar los trabajos remotos antes de hacer un push
+
+Haremos git pull origin main para traer a la rama main
+
+Te saldrá una advertencia de refusing to merge unrelated histories, la historias de los commits del github es distinta a la que tenemos localmente
+
+Puedes forzar que ocurra con git pull origin master --allow-unrelated-histories
+
+Ahora si podemos hacer git push origin main
+
+Se envió al main de github y listo! 
+
+Tip: Buscar git merge (junta todo i guess)
+
+## Cómo funcionan las llaves públicas y privadas
+
+link: https://platzi.com/clases/1557-git-github/19949-como-funcionan-las-llaves-publicas-y-privadas/
+
+Puedes enviar un mensaje a otro lado u otra persona, ese mensaje se cifra mediante una llave publica para que salga el mensaje modificado y luego ese mensaje publico lo pongo bajo mi llave privada para descifrar el mensaje secreto
+
+La llave privada abre la llave publica
+
+Mandas la llave publica y uno la recibe, copías la llave publica y haces un proceso de matematico de cifrado con la llave publica para generar un mensaje
+
+Para pasar el mensaje por la llave publica, queda un mensaje totalmente cifrado
+
+Copias el mensaje cifrado y usas tu llave privada para transformar el mensaje secreto
+
+![alt text](https://static.platzi.com/media/public/uploads/llavespubpriv_9010b33d-d065-4610-8305-156c13a368b3.PNG)
+
+Imagenes para entender:
+![alt text](https://static.platzi.com/media/user_upload/foto_0000000420160829125512-6cfa9621-1d87-4520-9143-7cda012da52e.jpg)
+![alt text](https://d20j05d0hyr158.cloudfront.net/img/89/minis/esquema-hibrido-cifrado.png)
+![alt text](https://4.bp.blogspot.com/-SqzsXJlfAS4/WRCIH94p5zI/AAAAAAAAKfM/RxfwAqpb4RI01PFTWv2kSI4znrY19_r3ACLcB/s1600/Cifrado%2BAsimetrico.png)
+![alt text](https://static.platzi.com/media/user_upload/llavespublicaprivada-13a13a6c-f134-4ef5-aaa8-6ed680e68979.jpg)
+
+## Configura tus llaves SSH en local
+
+https://platzi.com/clases/1557-git-github/19950-configurar-llaves-ssh-en-github/
+
+No es recomendable usar HTTPS, porque si te roban tu pc, puedes ser victima de password cracking debido a que guardas tu usuario y password en tu entorno local
+
+Además no debemos volver a poner el usuario y contraseña
+
+Envias la llave publica a github y le dices que use esta llave publica de mi llave privada
+
+Lo conectas por un protocolo nuevo llamado SSH
+
+Y github te va a enviar su propia llave publica, como tienes la llave publica y github la tuya, ahora puede haber una conexion de doble camino cifrada por SSH
+
+Le puedes añadir una contraseña encima a la llave para que sea la protección mas fuerte
+Bitlocker, configuracion de seguridad y linux
+
+Las llave SSH son por persona
+
+Primer paso: Generar tus llaves SSH. Recuerda que es muy buena idea proteger tu llave privada con una contraseña.
+```
+ssh-keygen -t rsa -b 4096 -C "tu@email.com"
+```
+Segundo paso: Terminar de configurar nuestro sistema.
+
+En Windows y Linux:
+```
+// Encender el "servidor" de llaves SSH de tu computadora:
+eval $(ssh-agent -s)
+```
+```
+// Añadir tu llave SSH a este "servidor":
+ssh-add ruta-donde-guardaste-tu-llave-privada
+```
+
+git remote -v
+El repositorio que usamos es origin, cambiemos la url de origin 
+
+Siempre antes de hacer un commit traete la ultima version del servidor
+
+con git pull origin (traemos del origen) main (fusionaremos con main)
