@@ -507,3 +507,63 @@ Y por último git push origin main
 
 Tip añadir llave: ssh-add ~/.ssh/id_rsa
 
+## Tags y veriones en Git y Github
+
+git log te muestra lo que paso
+
+git log --all ves todo lo que hemos hecho historicamente
+
+git log --all --graph 
+muestr las branches y las ramas
+
+git log --all --graph  --decorate --oneline
+Muestra la evolucion de las ramas pero mas friendly
+
+Aliases de linux
+alias arbolito "git log --all --graph  --decorate --oneline"
+
+Cada vez que pongas "arbolito" en la consola, saldrá esto
+
+Vamos a crear un tag, en la parte del "Reemplazo de una version por otra de la historia"
+
+git tag -a v0.1 -m "Resultado de las primeras clases del curso" commitNumber
+Osea es la vewrsion v0.1 (puede ser el que quieras)
+
+git tag -a v0.1 -m "Resultado de las primeras clases del curso" bdc13a 
+
+Ahora vemos los tags con git tag
+
+La forma de saber a que hash o commit le corresponde el hash es con 
+```
+git show-ref --tags
+```
+
+Con git status ves que nohay que enviar pero la idea es que alguien mas quiera ver los tags
+
+Chequeamos con un git pull origin
+
+Y subimos los tags con git push origin --tags
+
+Y como borramos un tag?
+```
+git tag -d nameTag
+```
+
+Y debemos hacer pull y push de los tags
+
+git push origin --tags
+
+Pero no se borra automaticamente en github, entonces los tags se pueden usar como releases, aunque los borres internamente, se quedan en el server, lo debes borrar asi:
+
+```
+git push origin :refs/tags/nameTag
+```
+
+Pero ojo, en github solo tenemos a main, no otras ramas como cabecera, aprenderemos eso
+
+## Manejo de ramas en Github
+
+Haremos el trabajo de cabecera en una rama y del footer en otra
+
+Header será cabecera y cabecera será la historia, trabajaremos como programadores distintos
+
