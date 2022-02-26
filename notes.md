@@ -567,3 +567,62 @@ Haremos el trabajo de cabecera en una rama y del footer en otra
 
 Header será cabecera y cabecera será la historia, trabajaremos como programadores distintos
 
+git show-branch muestra las ramas que existen y su historia
+
+tmb tenemos el mismo git show-branch --all pero con mas datos
+
+gitk abre en un software la historia de manera ultra visual
+
+Ojo!:  No puedes usar gitk con WSL, porque el cliente gráfico en este caso es Windows, y Linux no puede ejecutar clientes gráficos en Windows,
+
+Puedes enviar 2 ramas a github:
+```
+git push origin header footer
+```
+
+Para enviar una rama:
+```
+git push origin cabecera
+```
+
+git branch header 
+Creamos la rama header
+
+
+## Configurar múltiples colaboradores en un repositorio de GitHub
+
+Que pasa cuando te quieres unir a un proyecto? 
+
+git clone hhtpsUrl
+
+No te pidio contraseña porque es un repositorio publico
+
+vim historia.txt modificas la historia en consola
+
+Y curiosamente solo te traiste la rama main pero vas a poder ver las historias
+
+Pero te va a salir permission denied al hacer push
+
+Vas a settings, a collaborators y añades a los colaboradores con su email, pero deben tener una cuenta publica verificada
+
+Pero puedes hacer que sea con tu user si no quieres que tu email sea publico
+
+Y entonces ya podes colaborar
+
+Para traernos los cambios que hizo el otro, tenemos que hacer git pull origin main
+
+Save a File and Quit Vim / Vi
+The command to save a file in Vim and quit the editor is :wq.
+To save the file and exit the editor simultaneously, press Esc to switch to normal mode, type :wq and hit Enter.
+
+Vim Save Quit
+Press Esc
+Type :wq
+Press Enter
+
+recuerda git pull origin main te traes todo lo que paso en el server
+
+# Flujos de trabajo profesionales
+
+## Haciendo merge de ramas de desarrollo a master
+
