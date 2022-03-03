@@ -626,3 +626,6 @@ recuerda git pull origin main te traes todo lo que paso en el server
 
 ## Haciendo merge de ramas de desarrollo a master
 
+Si haces cambio en un logo debes volver a hacerles push
+
+Los archivos binarios como imagenes no se deberian subir a repos, deben ser ignorados, se suben aparte
