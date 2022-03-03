@@ -656,3 +656,13 @@ Esto lo ve como un devops, que ve todo el equipo de trabajo y los equipos trabaj
 
 ## Utilizando Pull Requests en GitHub
 
+Esto es util en el devops, crear un sistema al cual los trabajadores puedan trabajar mejor mediante reviewers, labels, projects, etc
+
+Lo importante es darle a create pull request
+
+Puedes darle request changes para decir sugerencia aque cambiar
+
+Que los cambios esten aprobados, no quiere decir que se hayan hecho, alguien debe hacer el merge
+
+Y puedes eliminar la branch que ya no necesites
+
