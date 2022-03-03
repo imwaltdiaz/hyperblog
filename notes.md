@@ -629,3 +629,30 @@ recuerda git pull origin main te traes todo lo que paso en el server
 Si haces cambio en un logo debes volver a hacerles push
 
 Los archivos binarios como imagenes no se deberian subir a repos, deben ser ignorados, se suben aparte
+
+Juntas las ramas al final con un merge
+
+## Flujo de trabajo profesional con Pull requests
+
+En una rama profesional nadie puede hacer un merge a main
+
+![alt text](https://static.platzi.com/media/public/uploads/flujodetrabprofbranches_96136aab-1884-4a9a-8b1e-83421630464d.PNG)
+
+La rama main eventualmente se subirá al servidor real
+
+Staging en rama es una rama antes de master, del server de pruebas, parecido al server real
+
+Creamos la rama del feature y desarrollamos en el entorno local y luego enviamos la ultima version de esa rama a staging
+
+en teoría master y stating siempre deben estar actualizados
+
+unirlos sería un "merge" pero se debe revisar el codigo, entonces va a un pull request, por lo que permite que otros miembros del equipo vena los cambios que hiciste y se ejecuten los cambios en staging
+
+Una vez en staging quieres fusionar con un PR a la rama maestra, esto es una caracteristica de github
+
+En gitlab es merge request
+
+Esto lo ve como un devops, que ve todo el equipo de trabajo y los equipos trabajen de forma mas efectiva
+
+## Utilizando Pull Requests en GitHub
+
