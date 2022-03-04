@@ -666,3 +666,89 @@ Que los cambios esten aprobados, no quiere decir que se hayan hecho, alguien deb
 
 Y puedes eliminar la branch que ya no necesites
 
+![alt text](https://cdn.dribbble.com/users/138252/screenshots/2389144/github_dri.png)
+
+## Creando un Fork, contribuyendo a un repositorio
+
+Cuando quitas a un colaborador no puede hacer merge y tampoco push, menos tags. Solo podrá copiar el proyecto si es de código abierto.
+
+Si le das a watch a un proyecto te notificará en el momento que hayan cambios
+
+Una estrellita es un indicador a que un proyecto te gusta
+
+Fork es como "tenedor" o "separar el cmaino", fork es hacer un copia del estado actual del proyecto y lo clonas como proyecto tuyo
+
+Copiará incluso los commits.
+
+Para traer los cambios a tu disco, copiaras la ssh le darás:
+```
+git clone sshId
+```
+
+Haces push a tu proyecto clonado desde tu repositorio, github sabe de esto y le darás a create new pull request y te pedirá escoger ramas 
+
+Incluso te podrá mostrar las diferencias del main entre tu repo y el del open source
+
+Entonces le darás a open a pull request y solicitarás aportar en la rama que quieras del proyecto open source
+
+Puedes permitir que editen el pull request
+
+Una vez hecho te queda esperar
+
+Una vez el archivo original cambia, el fork del colaborador se queda atrás
+
+Staged them: antes de traer cambios con un pull has commits
+
+En tu repo como colaborador te avisrá que tus commits estarán 3 del mas actual del rpoyecto y verás los cambios, un pull request haría que te traiga lo del proyecto a tu repo y listo
+
+Perooo... desde consola verás que tu origin es desde tu repo y necesitas una rama que traiga los cambios de main del open source
+
+Es así que iras al proyecto, copiarás su SSH link, y en la consola pondras:
+```
+git remote add upstream sshUrl
+```
+upstream es en lugar de origin, y es otra fuente nueva de donde puedes traer datos a tu rama master, es otra fuente de datos
+
+sigues con un git pull upstream main
+Asi te traes los cambios de main
+
+Y actualizas con git push origin main, mandando esto a tu repositorio original
+
+upstream es otra fuente de origen como origin
+Desde upstream  te traes lo que pase en el proyecto (como origen) y tmb harás pull request desde tu origin
+
+## Haciendo deployment a un servidor
+
+La rama master es lo que normalmente se lleva al servidor de produccion
+
+```
+Vuelve a esta clase cuando sepas hacer deploy a un server
+```
+
+te traes la url de https (o ssh idk)
+Y le das a git clone httpsUrl
+
+Y con la url especificando el:
+domiio/hyperblog/blogpost.html 
+accederás a la pagina
+
+Y cada cambio deberás hacer pull desde el server
+
+Cuidado, no tengas la base de datos con .git, esto lo verás en devops o con trevis CI o Jenkins
+
+Integración Continua es Devops, sugerido es el curso de Gitlab
+
+## Ignorar archivos en el repositorio con .gitignore
+
+Habrán cosas que no vas a querer subir a un repositorio
+
+Archivos que contienen contraseñas o codigos de api o codigo php que no uede ser parte del repo porque alguien mas puede verlo y acceder a tu contraseña
+
+git tiene por ello gitignore
+
+Una buena practica es evitar que los archivos binarios sean partes del repo
+
+la sintaxis es
+```
+*.tipoDeArchivo
+```
