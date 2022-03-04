@@ -6,3 +6,4 @@ Un blog increible para el curso de Git y Github de Platzi
 - Esto será un bullet
 - Llevo escribiendo en readme mis apuntes de clases
 
+Gracias 💚
