@@ -752,3 +752,20 @@ la sintaxis es
 ```
 *.tipoDeArchivo
 ```
+
+Cada que veo una puerta que dice "PUSH", siempre hago primero un "PULL" para evitar conflictos
+
+En proyectos incluso pueden ignorar todos los archivos binarios
+
+# Readme.md es una excelente práctica
+
+Readme sirve para contar de que va el archivo
+
+Puedes ver en raw como se escribe
+
+markdown es un lenguaje sobre el que esta escrito incluso la wikipedia
+
+Puedes usar: https://pandao.github.io/editor.md/en.html
+
+Es un super editor con esteroides
+
