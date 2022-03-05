@@ -803,3 +803,23 @@ Que pasa si quieres borrar una rama exterior pero la añades a la historia main 
 
 Pone como que esa rama nunca escribió
 
+dentro de la rama experimento dices que pegue tu rama a la rama de main
+
+desde experimento: git rebase main
+
+git rebase experimento (desde main)
+
+primero rebase ala rama que vas a desaparecer
+
+y luego rebase a la rama principal
+
+rebase a la que cambia y rebase al arama final
+
+## Git Stash: Guardar cambios en memoria y recuperarlos después
+
+Imagina que estas en mian y haces modificaciones en una rama anterior pero no quieres hacerles commits, para eso está stash
+
+Si intentas irte a otra rama sin ir commit, te obligara o borrará lo que no hiciste commit
+
+Puedes también guardar tus cambios y ponerlos en una rama 
+
