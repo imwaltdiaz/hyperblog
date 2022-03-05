@@ -769,3 +769,37 @@ Puedes usar: https://pandao.github.io/editor.md/en.html
 
 Es un super editor con esteroides
 
+## Tu sitio web público con GitHub Pages
+
+Esto es un hoisting gratuito de github, abres pages.github.com
+
+recuerda darle clone en la carpeta mayor para no crear carpetas de mas
+
+Regresa un día a subir tu portafolio a los comentarios de esta case porsi: https://platzi.com/clases/1557-git-github/19976-tu-sitio-web-publico-con-github-pages/
+
+Para hacer que te cargue de la raíz para que te funcione como pagina principal debes cambiar en settings el nombre del repositorio como:
+```
+nombreDeUsuario.github.io
+```
+
+# Multiples entornos de trabajo en Git
+
+## Git Rebase: reorganizando el trabajo realizado
+
+Rebase reescribe la historia del repositorio, cambia la historia de donde comenzó la rama y solo debe ser usado de manera local.
+
+El comando rebase es una mala práctica, nunca se debe usar, pero para efectos del curso te lo vamos a enseñar para que hagas tus propios experimentos. Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.
+```
+Cambiamos a la rama que queremos traer los cambios
+
+git checkout experiment
+
+Aplicamos rebase para traer los cambios de la rama que queremos 
+
+git rebase master
+```
+
+Que pasa si quieres borrar una rama exterior pero la añades a la historia main y los pegas a la historia del main 
+
+Pone como que esa rama nunca escribió
+
