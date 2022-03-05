@@ -6,6 +6,7 @@ Un blog increible para el curso de Git y Github de Platzi
 - Esto será un bullet
 - Llevo escribiendo en readme mis apuntes de clases
 - Esto es creado por el increíble platzi team
+- Hay ejemplos en windows, linux y mas
 
 
 Gracias 💚
