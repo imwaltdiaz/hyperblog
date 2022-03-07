@@ -926,3 +926,10 @@ repositorio de github en la nube.
 Si se necesitan traer todos los cambios de la rama de donde tomé el commit, se ejecuta desde master, git merge nombre_rama.
 
 De haber conflictos al hacer merge, se resuelven dejando las líneas de código necesarias o utilizando las opciones de Vscode.
+
+# Comandos de Git para casos de emergencia
+
+## Reconstruir commits en Git con amend
+
+Imagina que no querias enviar un commit porque faltaban correcciones
+
