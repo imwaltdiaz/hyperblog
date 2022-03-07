@@ -933,3 +933,94 @@ De haber conflictos al hacer merge, se resuelven dejando las líneas de código 
 
 Imagina que no querias enviar un commit porque faltaban correcciones
 
+La friegas, hiciste commit y te falto modificar algo
+
+Modificas ese archvio que te faltaba, luego lo añades con git add (en especial que sea solo ese archivo si puedes)
+
+Y luego usarás git commit --amend
+
+Y listo! Te pegará los cambios de staging al último commit
+
+## Git Reset y Reflog: úsese en caso de emergencia
+
+Git reflog seve todo, los heads que se han ido moviendo, donde murió todo y entonces tratas de buscar el ultimo head donde todo estaba correcto (al lado del commit)
+
+Y puedes hacer un git reset --soft lo que tengas en staging se queda en staging, lo que le hiciste add
+
+entonces con git reset --soft "head{Number}" te traera a staging lo perdido
+
+y git reset --hard resetea todo y regresa como justo antes del commit, lo usaremos con git reset --HARD "commitNumber"
+
+```
+git reset --HARD eff544f 
+# Perderá todo lo que se encuentra en staging y en el Working directory y se moverá el head al commit eff544f
+
+
+git reset --soft eff544f 
+# Te recuperará todos los cambios que tengas diferentes al commit eff544f, los agregará al staging area y moverá el head al commit eff544f
+```
+
+Esto tmb es una mala práctica
+
+## Buscar en archivos y commits de Git con Grep y log
+
+git grep color -->use la palabra color
+git grep la --> donde use la palabra la
+git grep -n color–> en que lineas use la palabra color
+git grep -n platzi --> en que lineas use la palabra platzi
+git grep -c la --> cuantas veces use la palabra la
+git grep -c paltzi --> cuantas veces use la palabra platzi
+git grep -c “<p>”–> cuantas veces use la etiqueta <p>
+
+git log -S “cabecera” --> cuantas veces use la palabra cabecera en todos los commits.
+
+grep–> para los archivos
+log --> para los commits.
+
+Practica aquí: https://learngitbranching.js.org/
+
+# Bonus sobre Git y Github
+
+## Comandos y recursos colaborativos en Git y GitHub
+
+Hay alias a nivel global y local y hay comandos especificos de git
+
+**git shortlog -sn** = muestra cuantos commit han hecho cada miembros del equipo.
+
+**git shortlog -sn --all** = muestra cuantos commit han hecho cada miembros del equipo hasta los que han sido eliminado
+
+**git shortlog -sn --all --no-merge** = muestra cuantos commit han hecho cada miembros quitando los eliminados sin los merges
+
+**git blame ARCHIVO** = muestra quien hizo cada cosa linea por linea
+
+**git blame -c ARCHIVO** = muestra un poco mejorel blame
+
+**git COMANDO --help** = muestra como funciona el comando.
+
+**git blame ARCHIVO -Llinea_inicial,linea_final**= muestra quien hizo cada cosa linea por linea indicándole desde que linea ver ejemplo -L35,50
+
+**git branch -r**= se muestran todas las ramas remotas
+git branch -a = se muestran todas las ramas tanto locales como remotas
+
+**git branch -r**= ves ramas remotas
+
+**git branch -a**= ves todas las ramas
+
+git config --g
+lobal alias.stats "shortlog -sn --all --no-merges"
+
+Creamos un alias para ejecutarlo con "git stats" y nos muestre cuantos commits cada uno tiene sin merges
+
+## Tu futuro con Git y GitHub
+
+Ahora tienes el mundo de DevOps
+
+![alt text](https://cdn-images-1.medium.com/max/1600/1*QwJOyLmOeKOSCmCNXw1CUg.png)
+
+
+![alt text](https://qph.fs.quoracdn.net/main-qimg-45657e2e7bba01396b46aa4000e66b82)
+
+Aprende un poco de travis o instala Jenkins o aprende Azure
+
+O GitLab pero lo corres en tu propio server y tiene todas las herramientas de DevOps
+
