@@ -894,3 +894,30 @@ El parametro -d ayuda con el borrado de carpetas untracked.
 
 Imagina que vas avanzando en una rama pero necesitas en master uno de esos avances de esa rama
 
+
+Cherry-pick es el copia y pega de commits en otras ramas, alert-spoiler al momento de hacer un merge de la rama donde copiaste ese commit con la rama donde la pegaste, se duplicara ese cambio y tendrás que eliminar uno de ellos.
+
+Si te equivocas y haces el git cherry-pick en el mismo branch que lo estas sacando te sale un error de versiones, puedes deshacer el cherry-pick con git cherry-pick --abort
+
+**Resumen:**
+Crear una nueva rama y pasarse para esa rama.
+
+Realizar los cambios en el código y realizar todos los commits necesarios.
+
+Antes de ejecutar el comando git cherry-pick, se debe anotar el id del commit que queremos traer al master.
+
+Para ello vamos a la rama donde esta el commit requerido (git checkout nombre_rama), ejecutamos el comando git log --oneline,
+copiamos el id del commit y nos regresamos a la rama master (git
+checkout master).
+
+En la rama master, ejecutamos: git cherry-pick id_commit.
+
+Git agregará al master el código requerido del commit indicado.
+
+Después, de ser necesario, se ejecutan los comandos git pull
+origin master y git push origin master para subir los cambios al
+repositorio de github en la nube.
+
+Si se necesitan traer todos los cambios de la rama de donde tomé el commit, se ejecuta desde master, git merge nombre_rama.
+
+De haber conflictos al hacer merge, se resuelven dejando las líneas de código necesarias o utilizando las opciones de Vscode.
