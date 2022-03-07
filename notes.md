@@ -894,6 +894,9 @@ El parametro -d ayuda con el borrado de carpetas untracked.
 
 Imagina que vas avanzando en una rama pero necesitas en master uno de esos avances de esa rama
 
+Desde la rama principal, harás git cherry-pick nombreCommit y te traerá lo que quieras
+
+Pega inmediatamente el commit viejo 
 
 Cherry-pick es el copia y pega de commits en otras ramas, alert-spoiler al momento de hacer un merge de la rama donde copiaste ese commit con la rama donde la pegaste, se duplicara ese cambio y tendrás que eliminar uno de ellos.
 
