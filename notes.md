@@ -898,6 +898,8 @@ Desde la rama principal, harás git cherry-pick nombreCommit y te traerá lo que
 
 Pega inmediatamente el commit viejo 
 
+Pero cherry pick es mala practica porque reconstruyes la historia
+
 Cherry-pick es el copia y pega de commits en otras ramas, alert-spoiler al momento de hacer un merge de la rama donde copiaste ese commit con la rama donde la pegaste, se duplicara ese cambio y tendrás que eliminar uno de ellos.
 
 Si te equivocas y haces el git cherry-pick en el mismo branch que lo estas sacando te sale un error de versiones, puedes deshacer el cherry-pick con git cherry-pick --abort
